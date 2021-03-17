@@ -1,0 +1,66 @@
+Nutrient,code
+Protein,203
+Total Fat,204
+Carbohydrate,205
+Energy,208
+Alcohol,221
+Water,255
+Caffeine,262
+Theobromine,263
+"Sugars, total",269
+"Fiber, total dietary",291
+Calcium,301
+Iron,303
+Magnesium,304
+Phosphorus,305
+Potassium,306
+Sodium,307
+Zinc,309
+Copper,312
+Selenium,317
+Retinol,319
+"Vitamin A, RAE",320
+"Carotene, beta",321
+"Carotene, alpha",322
+Vitamin E (alpha-tocopherol),323
+Vitamin D (D2 + D3),328
+"Cryptoxanthin, beta",334
+Lycopene,337
+Lutein + zeaxanthin,338
+Vitamin C,401
+Thiamin,404
+Riboflavin,405
+Niacin,406
+Vitamin B-6,415
+"Folate, total",417
+Vitamin B-12,418
+"Choline, total",421
+Vitamin K (phylloquinone),430
+Folic acid,431
+"Folate, food",432
+"Folate, DFE",435
+"Vitamin E, added",573
+"Vitamin B-12, added",578
+Cholesterol,601
+"Fatty acids, total saturated",606
+4:0,607
+6:0,608
+8:0,609
+10:0,610
+12:0,611
+14:0,612
+16:0,613
+18:0,614
+18:1,617
+18:2,618
+18:3,619
+20:4,620
+22:6 n-3,621
+16:1,626
+18:4,627
+20:1,628
+20:5 n-3,629
+22:1,630
+22:5 n-3,631
+"Fatty acids, total monounsaturated",645
+"Fatty acids, total polyunsaturated",646
