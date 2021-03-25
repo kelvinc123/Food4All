@@ -1,30 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'screens/screens.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class _MyAppState extends State<MyApp> {
+  GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(45.521563, -122.677433);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Food4All',
-      theme: ThemeData(
-        textTheme:
-            GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Google Office Locations'),
+          backgroundColor: Colors.green[700],
+        ),
+        body: GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: CameraPosition(
+            target: _center,
+            zoom: 4,
+          ),
+        ),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-        'Login': (context) => LoginScreen(),
-        'ForgotPassword': (context) => ForgotPassword(),
-        'CreateNewAccount': (context) => CreateNewAccount(),
-      },
     );
   }
 }
