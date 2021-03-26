@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1092373736607",
+    "project_id": "food4all-cef22",
+    "storage_bucket": "food4all-cef22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092373736607:android:14e4e1ea32a7845ff286aa",
+        "android_client_info": {
+          "package_name": "com.food4all.food4allapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092373736607-agqhssep1frgko90tb476fk74k0onecj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHfmeCkkB7xPTT7WLuPo2oJpjjGwSblE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092373736607-agqhssep1frgko90tb476fk74k0onecj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
