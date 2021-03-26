@@ -17,20 +17,13 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Google Office Locations'),
-          backgroundColor: Colors.green[700],
-        ),
-        body: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 4,
-          ),
-        ),
-      ),
-    );
+    return GoogleMap(
+        onMapCreated: _onMapCreated,
+        mapType: MapType.normal,
+        myLocationEnabled: true,
+        initialCameraPosition: CameraPosition(
+          target: _center,
+          zoom: 5,
+        ));
   }
 }

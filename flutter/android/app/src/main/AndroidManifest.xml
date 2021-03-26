@@ -11,8 +11,10 @@
         android:icon="@mipmap/ic_launcher">
 
         <!-- Add API key from codelabs -->
-        <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyC61gSzPOGgTJfJHLPE3LiJR3VH9ozarvk"/>
+        <meta-data 
+          android:name="com.google.android.geo.API_KEY"
+          android:value="AIzaSyC61gSzPOGgTJfJHLPE3LiJR3VH9ozarvk"
+          />
 
         <activity
             android:name=".MainActivity"
