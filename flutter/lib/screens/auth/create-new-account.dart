@@ -14,6 +14,24 @@ class CreateNewAccount extends StatelessWidget {
         BackgroundImage(image: 'assets/images/register_bg.png'),
         Scaffold(
             backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: kWhite,
+                ),
+              ),
+              title: Text(
+                'Create Account',
+                style: kBodyText,
+              ),
+              centerTitle: true,
+            ),
             body: Column(
               children: [
                 Flexible(

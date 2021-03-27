@@ -9,7 +9,7 @@ class GoogleMapWidget extends StatefulWidget {
 class _GoogleMapWidgetState extends State<GoogleMapWidget> {
   GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(47.6062, -122.3321);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -20,14 +20,15 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Google Office Locations'),
-          backgroundColor: Colors.green[700],
+          title: Text('Available Takeouts'),
+          backgroundColor: Colors.greenAccent[700],
+          centerTitle: true,
         ),
         body: GoogleMap(
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
-            zoom: 4,
+            zoom: 13,
           ),
         ),
       ),

@@ -14,6 +14,7 @@ class RegisterForm extends StatefulWidget {
 class _RegisterFormState extends State<RegisterForm> {
   final _registerKey = GlobalKey<FormState>();
   User user = User();
+  bool _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -73,13 +74,18 @@ class _RegisterFormState extends State<RegisterForm> {
                 child: RoundedButton(
                   onPressed: () {
                     if (_registerKey.currentState.validate()) {
+                      setState(() {
+                        _loading = true;
+                      });
                       _registerKey.currentState.save();
-
                       context
                           .read<AuthenticationService>()
                           .register(email: user.email, password: user.password)
                           .then((uid) {
                         print("Created user $uid");
+                        setState(() {
+                          _loading = false;
+                        });
                         Navigator.pushNamed(context, "/");
                       }).catchError((e) {
                         final snackBar = new SnackBar(
@@ -88,9 +94,13 @@ class _RegisterFormState extends State<RegisterForm> {
                         );
 
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        setState(() {
+                          _loading = false;
+                        });
                       });
                     }
                   },
+                  loading: _loading,
                   buttonName: "Register",
                 ))
           ],

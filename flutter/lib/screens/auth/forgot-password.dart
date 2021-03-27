@@ -4,7 +4,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food4all_app/pallete.dart';
 import '../../widgets/widgets.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ForgotPassword extends StatefulWidget {
+  @override
+  _ForgotPasswordState createState() => _ForgotPasswordState();
+}
+
+class _ForgotPasswordState extends State<ForgotPassword> {
+  bool _loading = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -42,7 +49,7 @@ class ForgotPassword extends StatelessWidget {
                     Container(
                       width: size.width * 0.8,
                       child: Text(
-                        'Enter your email we will send instruction to reset your password',
+                        'Enter the email where you would like password reset instructions sent.',
                         style: kBodyText,
                       ),
                     ),
@@ -54,12 +61,30 @@ class ForgotPassword extends StatelessWidget {
                       hint: 'Email',
                       inputType: TextInputType.emailAddress,
                       inputAction: TextInputAction.done,
-                      label: '',
+                      label: 'Email',
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    RoundedButton(buttonName: 'Send')
+                    RoundedButton(
+                      onPressed: () async {
+                        setState(() {
+                          _loading = true;
+                        });
+                        await new Future.delayed(const Duration(seconds: 3));
+                        final snackBar = new SnackBar(
+                          content: Text("Email with reset link sent."),
+                          backgroundColor: Colors.greenAccent[700],
+                        );
+
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        setState(() {
+                          _loading = false;
+                        });
+                      },
+                      buttonName: 'Send',
+                      loading: _loading,
+                    )
                   ],
                 ),
               )

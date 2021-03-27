@@ -27,7 +27,7 @@ class RoundedButton extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)))),
         child: loading
             ? CircularProgressIndicator(
-                backgroundColor: Colors.white,
+                valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
               )
             : Text(
                 buttonName,

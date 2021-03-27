@@ -24,8 +24,8 @@ class BottomNavBar extends StatelessWidget {
 
       // Theme settings
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.greenAccent[400],
-      selectedItemColor: Colors.black,
+      backgroundColor: Colors.white,
+      selectedItemColor: Colors.greenAccent[700],
       unselectedItemColor: Colors.black45,
 
       // items argument contains all button that we

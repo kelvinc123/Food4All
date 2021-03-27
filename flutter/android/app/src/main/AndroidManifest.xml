@@ -12,7 +12,7 @@
 
         <!-- Add API key from codelabs -->
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyC61gSzPOGgTJfJHLPE3LiJR3VH9ozarvk"/>
+               android:value="AIzaSyAHfmeCkkB7xPTT7WLuPo2oJpjjGwSblE0"/>
 
         <activity
             android:name=".MainActivity"

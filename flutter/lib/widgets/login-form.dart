@@ -14,6 +14,7 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   final _loginKey = GlobalKey<FormState>();
   User user = User();
+  bool _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -57,24 +58,35 @@ class _LoginFormState extends State<LoginForm> {
                 child: RoundedButton(
                   onPressed: () {
                     if (_loginKey.currentState.validate()) {
+                      setState(() {
+                        _loading = true;
+                      });
                       _loginKey.currentState.save();
 
                       context
                           .read<AuthenticationService>()
                           .signIn(
                               email: user.email.trim(), password: user.password)
-                          .then((uid) => print("Signed in user $uid"))
-                          .catchError((e) {
+                          .then((uid) {
+                        print("Signed in user $uid");
+                        setState(() {
+                          _loading = false;
+                        });
+                      }).catchError((e) {
                         final snackBar = new SnackBar(
                           content: Text("${e.message} (code: ${e.code})"),
                           backgroundColor: Colors.red[500],
                         );
 
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        setState(() {
+                          _loading = false;
+                        });
                       });
                     }
                   },
                   buttonName: "Login",
+                  loading: _loading,
                 ))
           ],
         ));
