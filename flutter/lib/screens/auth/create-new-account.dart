@@ -32,37 +32,41 @@ class CreateNewAccount extends StatelessWidget {
               ),
               centerTitle: true,
             ),
-            body: Column(
-              children: [
-                Flexible(
-                    child: Padding(
-                        padding: EdgeInsets.only(top: 36.0),
-                        child: RegisterForm())),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Already have an account? ',
-                      style: kBodyText.copyWith(fontSize: 18),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/');
-                      },
-                      child: Text(
-                        'Login',
-                        style: kBodyText.copyWith(
-                            fontSize: 18,
-                            color: Colors.greenAccent[700],
-                            fontWeight: FontWeight.bold),
+            body: Center(
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.all(15.0),
+                children: [
+                  Center(
+                      child: Padding(
+                          padding: EdgeInsets.only(top: 36.0),
+                          child: RegisterForm())),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already have an account? ',
+                        style: kBodyText.copyWith(fontSize: 18),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/');
+                        },
+                        child: Text(
+                          'Login',
+                          style: kBodyText.copyWith(
+                              fontSize: 18,
+                              color: Colors.greenAccent[700],
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             )),
       ],
     );

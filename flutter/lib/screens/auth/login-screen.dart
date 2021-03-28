@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
                   child: Text(
                     'Food4All',
                     style: TextStyle(
-                        color: Colors.green[300],
+                        color: Colors.greenAccent[400],
                         fontSize: 60,
                         fontWeight: FontWeight.bold),
                   ),

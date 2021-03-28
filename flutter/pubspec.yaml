@@ -28,7 +28,9 @@ dependencies:
   # Add the following two lines from google maps api part 5
   http: ^0.13.1
   json_serializable: ^4.1.0
-  permission: ^0.1.7
+  # Dependency for current location
+  location: ^2.0.0
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
@@ -37,6 +39,7 @@ dependencies:
   firebase_core: ^1.0.1  # Firebase core SDK
   firebase_auth: ^1.0.1
   cloud_firestore: ^1.0.1
+  google_sign_in: ^5.0.0
   firebase_analytics: ^7.1.1
   validators: ^2.0.0
   provider: ^4.3.2+1
@@ -45,8 +48,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   # Add the following two lines from google maps api part 5
-  pedantic: ^1.11.0
-  build_runner: ^1.10.0
+  # pedantic: ^1.11.0
+  # build_runner: ^1.10.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -63,6 +66,8 @@ flutter:
     - assets/images/Food4All.png
     - assets/images/login_bg.png
     - assets/images/register_bg.png
+    - assets/images/logo.png
+    - assets/images/google_logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

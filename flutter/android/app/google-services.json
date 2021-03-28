@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1092373736607-5csngdvktf3ig8te5lkfikc0mhg45jf3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.food4all.food4allapp",
+            "certificate_hash": "12c032d5a617ed1852bace587399cbab9081d27c"
+          }
+        },
+        {
           "client_id": "1092373736607-agqhssep1frgko90tb476fk74k0onecj.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "1092373736607-agqhssep1frgko90tb476fk74k0onecj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1092373736607-84rsr71hlmigj813u3lc05jqh9rhqds8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.food4allApp"
+              }
             }
           ]
         }
