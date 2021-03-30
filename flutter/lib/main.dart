@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food4all_app/core/auth/authentication-service.dart';
-// import 'package:food4all_app/screens/feed.dart';
 import 'package:food4all_app/screens/loading.dart';
 import 'package:food4all_app/widgets/auth/authentication-wrapper.dart';
 import 'package:google_fonts/google_fonts.dart';

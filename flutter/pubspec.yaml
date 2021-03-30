@@ -68,6 +68,12 @@ flutter:
     - assets/images/register_bg.png
     - assets/images/logo.png
     - assets/images/google_logo.png
+
+    # Add Yiyu's sample images. Later on, we can use firestore. 
+    - assets/images/dough.png
+    - assets/images/shaw.png
+    - assets/images/une.png
+    - assets/images/val.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
