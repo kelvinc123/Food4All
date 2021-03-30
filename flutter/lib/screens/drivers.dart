@@ -10,9 +10,9 @@ class _DriversState extends State<Drivers> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Center(
-        child: Text("Available Pickup"),
-      )),
+          title: Text("Available Pickup"),
+          centerTitle: true,
+          automaticallyImplyLeading: false),
       body: DriverBody(),
     );
   }

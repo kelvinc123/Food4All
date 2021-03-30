@@ -1,15 +1,17 @@
 class User {
+  String uid;
   String email;
   String password;
   String displayName;
 
-  User({this.email, this.displayName, this.password});
+  User({this.uid, this.email, this.displayName, this.password});
 
   Map<String, dynamic> createMap() {
-    return {'email': email, 'display_name': displayName};
+    return {'uid': uid, 'email': email, 'displayName': displayName};
   }
 
   User.fromFirestore(Map<String, dynamic> firestoreMap)
-      : email = firestoreMap['email'],
+      : uid = firestoreMap['uid'],
+        email = firestoreMap['email'],
         displayName = firestoreMap['display_name'];
 }

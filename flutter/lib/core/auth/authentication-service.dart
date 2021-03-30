@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:food4all_app/core/db/db-service.dart';
+import 'package:food4all_app/models/models.dart' as Models;
 import 'package:google_sign_in/google_sign_in.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth;
@@ -19,12 +20,22 @@ class AuthenticationService {
     }
   }
 
-  Future<String> register({String email, String password}) async {
+  Future<User> register({String email, String password}) async {
     try {
       UserCredential userCredential = await _firebaseAuth
           .createUserWithEmailAndPassword(email: email, password: password);
 
-      return userCredential.user.uid;
+      String displayName = email.split("@")[0];
+
+      _firebaseAuth.currentUser.updateProfile(displayName: displayName);
+
+      await DatabaseService().createUser(Models.User(
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+        displayName: displayName,
+      ));
+
+      return userCredential.user;
     } on FirebaseAuthException catch (e) {
       return Future.error(e);
     }
@@ -34,9 +45,9 @@ class AuthenticationService {
     await _firebaseAuth.signOut();
   }
 
-  Future<String> signInWithGoogle() async {
+  Future<User> signInWithGoogle() async {
     final GoogleSignIn googleSignIn = GoogleSignIn();
-    String uid;
+    User user;
 
     final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
 
@@ -53,12 +64,22 @@ class AuthenticationService {
         final UserCredential userCredential =
             await _firebaseAuth.signInWithCredential(credential);
 
-        uid = userCredential.user.uid;
+        user = userCredential.user;
       } on FirebaseAuthException catch (e) {
         return Future.error(e);
       }
     }
 
-    return uid;
+    return user;
+  }
+
+  Future<String> sendPasswordResetEmail({String email}) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: email);
+
+      return "Password reset email sent.";
+    } on FirebaseAuthException catch (e) {
+      return Future.error(e);
+    }
   }
 }

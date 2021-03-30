@@ -32,8 +32,8 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   context
                       .read<AuthenticationService>()
                       .signInWithGoogle()
-                      .then((uid) {
-                    print("Signed in user $uid");
+                      .then((user) {
+                    print("Signed in user ${user.uid}");
                     setState(() {
                       _loading = false;
                     });
@@ -50,14 +50,14 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   });
                 },
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image(
                         image: AssetImage('assets/images/google_logo.png'),
-                        height: 35.0,
+                        height: 24.0,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10),

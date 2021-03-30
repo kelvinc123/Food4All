@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:food4all_app/pallete.dart';
 import 'package:food4all_app/widgets/widgets.dart';
@@ -33,37 +32,36 @@ class CreateNewAccount extends StatelessWidget {
               centerTitle: true,
             ),
             body: Center(
-              child: ListView(
-                shrinkWrap: true,
-                padding: EdgeInsets.all(15.0),
+              child: Flex(
+                direction: Axis.vertical,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Center(
-                      child: Padding(
-                          padding: EdgeInsets.only(top: 36.0),
-                          child: RegisterForm())),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Already have an account? ',
-                        style: kBodyText.copyWith(fontSize: 18),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/');
-                        },
-                        child: Text(
-                          'Login',
-                          style: kBodyText.copyWith(
-                              fontSize: 18,
-                              color: Colors.greenAccent[700],
-                              fontWeight: FontWeight.bold),
+                  Flexible(
+                      flex: 5,
+                      child: SingleChildScrollView(child: RegisterForm())),
+                  Flexible(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Already have an account? ',
+                          style: kBodyText.copyWith(fontSize: 18),
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/');
+                          },
+                          child: Text(
+                            'Login',
+                            style: kBodyText.copyWith(
+                                fontSize: 18,
+                                color: Colors.greenAccent[700],
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

@@ -9,10 +9,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Available Takeouts")),
-        backgroundColor: Colors.greenAccent[700],
+        title: Text("Available Takeouts"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: GoogleMapWidget(),

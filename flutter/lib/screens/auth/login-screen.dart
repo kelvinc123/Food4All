@@ -12,51 +12,61 @@ class LoginScreen extends StatelessWidget {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          body: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Flexible(
-                flex: 1,
-                child: Center(
-                  child: Text(
-                    'Food4All',
-                    style: TextStyle(
-                        color: Colors.greenAccent[400],
-                        fontSize: 60,
-                        fontWeight: FontWeight.bold),
+          body: Center(
+            child: Flex(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              direction: Axis.vertical,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: Center(
+                    child: Text(
+                      'Food4All',
+                      style: TextStyle(
+                          color: Colors.greenAccent[400],
+                          fontSize: 60,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-              ),
-              Flexible(flex: 2, child: LoginForm()),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () =>
-                        Navigator.pushNamed(context, 'CreateNewAccount'),
-                    child: Container(
-                      child: Text(
-                        'Create Account',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
+                Flexible(
+                  flex: 5,
+                  child: SingleChildScrollView(
+                    child: LoginForm(),
+                  ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      GestureDetector(
+                        onTap: () =>
+                            Navigator.pushNamed(context, 'CreateNewAccount'),
+                        child: Container(
+                          child: Text(
+                            'Create Account',
+                            style: TextStyle(fontSize: 18, color: Colors.white),
+                          ),
+                          decoration: BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(width: 1, color: kWhite))),
+                        ),
                       ),
-                      decoration: BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(width: 1, color: kWhite))),
-                    ),
+                      GestureDetector(
+                        onTap: () =>
+                            Navigator.pushNamed(context, 'ForgotPassword'),
+                        child: Text(
+                          'Forgot Password',
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      ),
+                    ],
                   ),
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'ForgotPassword'),
-                    child: Text(
-                      'Forgot Password',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         )
       ],

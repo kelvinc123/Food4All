@@ -20,7 +20,7 @@ class RoundedButton extends StatelessWidget {
       height: 50,
       width: size.width * 0.8,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: loading ? null : onPressed,
         style: ElevatedButton.styleFrom(
             primary: Colors.greenAccent[700],
             shape: const RoundedRectangleBorder(

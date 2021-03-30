@@ -72,8 +72,8 @@ class _AppState extends State<App> {
             theme: ThemeData(
               textTheme:
                   GoogleFonts.muktaTextTheme(Theme.of(context).textTheme),
-              primarySwatch: Colors.green,
-              accentColor: Colors.green[700],
+              primaryColor: Colors.greenAccent[700],
+              brightness: Brightness.light,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
             initialRoute: '/',

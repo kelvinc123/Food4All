@@ -22,39 +22,34 @@ class _LoginFormState extends State<LoginForm> {
     return Form(
         key: _loginKey,
         child: Column(
-          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            Flexible(
-              child: TextInputField(
-                label: "Email",
-                icon: FontAwesomeIcons.envelope,
-                isEmail: true,
-                inputType: TextInputType.emailAddress,
+            TextInputField(
+              label: "Email",
+              icon: FontAwesomeIcons.envelope,
+              isEmail: true,
+              inputType: TextInputType.emailAddress,
+              inputAction: TextInputAction.next,
+              validator: (String value) {
+                if (!validators.isEmail(value)) {
+                  return "Please enter a valid email.";
+                }
+                return null;
+              },
+              onChanged: (String value) => {user.email = value},
+            ),
+            TextInputField(
+                label: "Password",
+                icon: FontAwesomeIcons.lock,
+                isPassword: true,
+                inputType: TextInputType.text,
                 inputAction: TextInputAction.next,
                 validator: (String value) {
-                  if (!validators.isEmail(value)) {
-                    return "Please enter a valid email.";
+                  if (value.length < 8) {
+                    return "Password must be at least 8 characters.";
                   }
                   return null;
                 },
-                onChanged: (String value) => {user.email = value},
-              ),
-            ),
-            Flexible(
-              child: TextInputField(
-                  label: "Password",
-                  icon: FontAwesomeIcons.lock,
-                  isPassword: true,
-                  inputType: TextInputType.text,
-                  inputAction: TextInputAction.next,
-                  validator: (String value) {
-                    if (value.length < 8) {
-                      return "Password must be at least 8 characters.";
-                    }
-                    return null;
-                  },
-                  onChanged: (String value) => {user.password = value}),
-            ),
+                onChanged: (String value) => {user.password = value}),
             Padding(
                 padding: const EdgeInsets.only(top: 8.0, bottom: 24.0),
                 child: RoundedButton(

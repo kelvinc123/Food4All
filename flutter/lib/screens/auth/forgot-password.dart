@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:food4all_app/core/auth/authentication-service.dart';
 import 'package:food4all_app/pallete.dart';
 import '../../widgets/widgets.dart';
+import 'package:provider/provider.dart';
 
 class ForgotPassword extends StatefulWidget {
   @override
@@ -67,19 +69,35 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       height: 20,
                     ),
                     RoundedButton(
-                      onPressed: () async {
+                      onPressed: () {
                         setState(() {
                           _loading = true;
                         });
-                        await new Future.delayed(const Duration(seconds: 3));
-                        final snackBar = new SnackBar(
-                          content: Text("Email with reset link sent."),
-                          backgroundColor: Colors.greenAccent[700],
-                        );
 
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        setState(() {
-                          _loading = false;
+                        context
+                            .read<AuthenticationService>()
+                            .sendPasswordResetEmail(
+                                email: "sstevens88@gmail.com")
+                            .then((msg) {
+                          final snackBar = new SnackBar(
+                            content: Text(msg),
+                            backgroundColor: Colors.greenAccent[700],
+                          );
+
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                          setState(() {
+                            _loading = false;
+                          });
+                        }).catchError((e) {
+                          final snackBar = new SnackBar(
+                            content: Text("${e.message} (code: ${e.code})"),
+                            backgroundColor: Colors.red[500],
+                          );
+
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                          setState(() {
+                            _loading = false;
+                          });
                         });
                       },
                       buttonName: 'Send',

@@ -12,7 +12,7 @@ class Frames extends StatefulWidget {
 
 class _FramesState extends State<Frames> {
   // specify the first index on _children variable which is Home()
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   // Here is the list of the widgets of all pages.
   // Each of them are available on screns/ directory
