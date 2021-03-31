@@ -32,6 +32,6 @@ class DatabaseService {
   }
 
   Stream<QuerySnapshot> getDonorsStream() {
-    return _db.collection('donors').snapshots();
+    return _db.collection('donors').snapshots(includeMetadataChanges: true);
   }
 }

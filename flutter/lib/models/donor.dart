@@ -4,13 +4,15 @@ class Donor {
   Map<String, dynamic> locationMap;
   List availableTakeouts;
   int takeoutCount;
+  String photoUrl;
 
   Donor(
       {this.uid,
       this.name,
       this.locationMap,
       this.availableTakeouts,
-      this.takeoutCount});
+      this.takeoutCount,
+      this.photoUrl});
 
   Map<String, dynamic> createMap() {
     return {
@@ -18,7 +20,8 @@ class Donor {
       'name': name,
       'locationMap': locationMap,
       'availableTakeouts': availableTakeouts,
-      'takeoutCount': takeoutCount
+      'takeoutCount': takeoutCount,
+      'photoUrl': photoUrl
     };
   }
 
@@ -26,5 +29,6 @@ class Donor {
       : name = firestoreMap['name'],
         locationMap = firestoreMap['location_map'],
         availableTakeouts = firestoreMap['available_takeouts'],
-        takeoutCount = firestoreMap['takeout_count'];
+        takeoutCount = firestoreMap['takeout_count'],
+        photoUrl = firestoreMap['photoUrl'];
 }
