@@ -7,7 +7,6 @@ import '../../widgets/widgets.dart';
 class CreateNewAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
         BackgroundImage(image: 'assets/images/register_bg.png'),
