@@ -11,7 +11,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text("Available Takeouts"),
+        title: Text("Takeouts Map"),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),

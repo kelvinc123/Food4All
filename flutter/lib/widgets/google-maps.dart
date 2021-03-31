@@ -135,6 +135,7 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
                                             padding: EdgeInsets.only(top: 12.0),
                                             child: RoundedButton(
                                                 onPressed: () {
+                                                  Navigator.of(context).pop();
                                                   _showDialog(
                                                       context, donor.name);
                                                   document.reference.update({
