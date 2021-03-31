@@ -26,8 +26,8 @@ dependencies:
   # add google map
   google_maps_flutter: ^2.0.1
   # Add the following two lines from google maps api part 5
-  http: ^0.13.1
-  json_serializable: ^4.1.0
+  http: ^0.13.0
+  # json_serializable: ^4.1.0
   # Dependency for current location
   location: ^2.0.0
 
@@ -43,6 +43,8 @@ dependencies:
   firebase_analytics: ^7.1.1
   validators: ^2.0.0
   provider: ^4.3.2+1
+  rxdart: ^0.26.0
+  geoflutterfire2: ^2.3.2
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +70,12 @@ flutter:
     - assets/images/register_bg.png
     - assets/images/logo.png
     - assets/images/google_logo.png
+
+    # Add Yiyu's sample images. Later on, we can use firestore. 
+    - assets/images/dough.png
+    - assets/images/shaw.png
+    - assets/images/une.png
+    - assets/images/val.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

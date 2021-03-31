@@ -17,9 +17,21 @@ class DatabaseService {
     var snap = await _db.collection('users').doc(id).get();
   }
 
-  // Stream<List<Donor>> getDonorLocations() {
-  //   return _db.collection('donors').snapshots().map((snapshot) => snapshot.docs
-  //       .map((document) => Donor.fromFirestore(document.data))
-  //       .toList());
-  // }
+  Future<List<Donor>> getDonors() async {
+    final donors = await _db.collection('donors').get();
+
+    List<Donor> donorObjs = [];
+
+    for (final donor in donors.docs) {
+      Donor donorObj = Donor.fromFirestore(donor.data());
+      donorObj.uid = donor.id;
+      donorObjs.add(donorObj);
+    }
+
+    return donorObjs;
+  }
+
+  Stream<QuerySnapshot> getDonorsStream() {
+    return _db.collection('donors').snapshots();
+  }
 }
