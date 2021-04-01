@@ -20,9 +20,10 @@ to check for additional requirements for running flutter.
  2. Click on the main.dart file located at the ./flutter/main.dart 
  3. Select Run -> Run Without Debugging
  4. You should see a dropdown menu on the top, click on Start ios Simulator
- 5. A new window containg ios simulator will open and you should see the app running
+ 5. A new window containing ios simulator will open and you should see the app running
 
 #### Android emulator
  1. Open the android emulator 
  2. Change the directory to ./flutter
  3. Run ```flutter run``` on the terminal
+ 4. The app will run on the android emulator
