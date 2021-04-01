@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodybite_app/pallete.dart';
+import 'package:food4all_app/pallete.dart';
 
-class TextInputField extends StatelessWidget {
-  const TextInputField({
+class PasswordInput extends StatelessWidget {
+  const PasswordInput({
     Key key,
     @required this.icon,
     @required this.hint,
@@ -42,6 +42,7 @@ class TextInputField extends StatelessWidget {
               hintText: hint,
               hintStyle: kBodyText,
             ),
+            obscureText: true,
             style: kBodyText,
             keyboardType: inputType,
             textInputAction: inputAction,

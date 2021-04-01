@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodybite_app/pallete.dart';
+import 'package:food4all_app/pallete.dart';
 
 class PasswordInput extends StatelessWidget {
   const PasswordInput({
